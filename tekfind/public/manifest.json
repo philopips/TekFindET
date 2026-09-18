@@ -1,0 +1,22 @@
+{
+  "name": "TekFind - Ethiopia Electronics Marketplace",
+  "short_name": "TekFind",
+  "description": "Modern electronics marketplace connecting Ethiopian buyers with verified local tech shops, transparent ETB pricing, and an authenticated admin product manager.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#facc15",
+  "icons": [
+    {
+      "src": "/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

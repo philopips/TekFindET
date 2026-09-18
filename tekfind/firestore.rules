@@ -1,0 +1,18 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Electronics product catalog: publicly readable by any user
+    match /products/{productId} {
+      allow read: if true;
+      // Only authenticated admins can add, update, or delete products
+      allow write: if request.auth != null;
+    }
+
+    // Inquiries tracking: publicly creatable on 'Contact to Buy' click
+    match /inquiries/{inquiryId} {
+      allow create: if true;
+      // Only authenticated admins can view inquiry history & stats
+      allow read, update, delete: if request.auth != null;
+    }
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "projectId": "tekfindet",
+  "appId": "1:808318623276:web:fa3274bcca3d672c14fb89",
+  "apiKey": "AIzaSyB0FoseExLwZwYk4NbgPvyB2L6lguooJZA",
+  "authDomain": "tekfindet.firebaseapp.com",
+  "firestoreDatabaseId": "ai-studio-tekfind-d1dc2479-127a-4c2d-a1ca-9ad02e6c1672",
+  "storageBucket": "tekfindet.firebasestorage.app",
+  "messagingSenderId": "808318623276",
+  "measurementId": "",
+  "oAuthClientId": "808318623276-m8k0vr1udc16lji5isd4dbvv7e9vb0lq.apps.googleusercontent.com",
+  "recaptchaSiteKey": ""
+}

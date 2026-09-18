@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      // Ensure window.fetch has both a getter and setter to prevent "Cannot set property fetch of #<Window> which has only a getter"
+      (function() {
+        try {
+          var _nativeFetch = window.fetch;
+          if (typeof _nativeFetch === 'function') {
+            _nativeFetch = _nativeFetch.bind(window);
+          }
+          Object.defineProperty(window, 'fetch', {
+            get: function() {
+              return _nativeFetch;
+            },
+            set: function(fn) {
+              _nativeFetch = typeof fn === 'function' ? fn.bind(window) : fn;
+            },
+            configurable: true,
+            enumerable: true
+          });
+        } catch (e) {
+          // Graceful fallback if window.fetch cannot be redefined
+        }
+      })();
+    </script>
+    <title>TekFind - Ethiopia's Modern Electronics Marketplace</title>
+    <meta name="description" content="Modern electronics marketplace connecting Ethiopian buyers with verified local tech shops, transparent ETB pricing, and an authenticated admin product manager." />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/app-icon.png" />
+    <link rel="manifest" href="/manifest.json" />
+    <meta name="theme-color" content="#facc15" />
+    <meta property="og:title" content="TekFind - Ethiopia's Modern Electronics Marketplace" />
+    <meta property="og:description" content="Modern electronics marketplace connecting Ethiopian buyers with verified local tech shops, transparent ETB pricing, and an authenticated admin product manager." />
+    <meta property="og:image" content="/app-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:image" content="/app-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-[#0f172a]/[0.02] text-slate-900 font-sans antialiased selection:bg-yellow-400 selection:text-slate-950">
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
+

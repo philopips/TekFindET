@@ -1,0 +1,57 @@
+{
+  "entities": {
+    "products": {
+      "title": "products",
+      "description": "Electronics product listings for Addis Ababa shops",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "brand": { "type": "string" },
+        "category": { "type": "string" },
+        "priceETB": { "type": "number" },
+        "originalPriceETB": { "type": "number" },
+        "shopName": { "type": "string" },
+        "shopVerified": { "type": "boolean" },
+        "shopRating": { "type": "number" },
+        "shopReviewCount": { "type": "number" },
+        "location": { "type": "string" },
+        "subCity": { "type": "string" },
+        "condition": { "type": "string" },
+        "warranty": { "type": "string" },
+        "lastUpdated": { "type": "string" },
+        "images": { "type": "array", "items": { "type": "string" } },
+        "featured": { "type": "boolean" },
+        "trending": { "type": "boolean" },
+        "description": { "type": "string" },
+        "keySpecs": { "type": "array", "items": { "type": "string" } },
+        "specs": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "label": { "type": "string" },
+              "value": { "type": "string" }
+            }
+          }
+        },
+        "inStock": { "type": "boolean" },
+        "stockCount": { "type": "number" },
+        "inquiryCode": { "type": "string" }
+      },
+      "required": ["name", "brand", "category", "priceETB", "shopName", "location", "subCity", "inquiryCode"]
+    },
+    "inquiries": {
+      "title": "inquiries",
+      "description": "Customer inquiry records when clicking Contact to Buy",
+      "type": "object",
+      "properties": {
+        "productId": { "type": "string" },
+        "listingId": { "type": "string" },
+        "productName": { "type": "string" },
+        "shopName": { "type": "string" },
+        "timestamp": { "type": "string" }
+      },
+      "required": ["productId", "listingId", "productName", "shopName", "timestamp"]
+    }
+  }
+}
